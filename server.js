@@ -7,11 +7,15 @@ const app = express();
 
 app.use(express.json());
 app.use("/api", router);
-
+app.get("/short", (req, res) => {
+  console.log(req.url);
+  res.end("got this far...I think");
+});
 // TODO: use the imported router to handle all requests
 
 app.use((err, req, res, next) => {
   console.error(err);
+  res.status(err.status || 500);
   res.json({ name: err.name, msg: err.message });
 });
 
