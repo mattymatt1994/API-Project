@@ -22,3 +22,8 @@ app.use((err, req, res, next) => {
 app.listen(config.port, () => {
   console.log(`Server listening on port ${config.port}...`);
 });
+
+// app.listen(config.port, () => {
+//   console.log(`Server listening on port ${config.port}...`);
+// }); "Most import piece of code on this page"
+// This "opens the door", actually allows server to take res/req
